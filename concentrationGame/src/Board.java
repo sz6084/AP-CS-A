@@ -19,7 +19,7 @@ public class Board {
             "fox", "fox",
             "monkey", "monkey",
             "turtle", "turtle" };
-    private Tile[][] gameboard = new Tile[3][4];
+    private Tile[][] gameboard = new Tile[3][4]; // size of board
 
     /**
      * Constructor for the game. Creates the 2D gameboard
@@ -53,11 +53,12 @@ public class Board {
                 if (gameboard[i][j].isShowingValue()) {
                     out += " "+gameboard[i][j].getValue()+" ";
                 } else if (gameboard[i][j].getHidden().equals("matched")) {
-                    out += " * ";
+                    out += " [*] ";
                 } else {
-                    out += " _ ";
+                    out += " [_] ";
                 }
             }
+            out+="\n";
         }
 
         return out;
@@ -95,7 +96,7 @@ public class Board {
      * @param column the column value of Tile
      */
     public void showValue(int row, int column) {
-        System.out.println(gameboard[row][column].getValue());
+        gameboard[row][column].show();
     }
 
     /**
