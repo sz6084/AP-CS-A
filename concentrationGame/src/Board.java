@@ -51,11 +51,11 @@ public class Board {
         for (int i = 0; i < gameboard.length; i++) {
             for (int j = 0; j < gameboard[0].length; j++) {
                 if (gameboard[i][j].isShowingValue()) {
-                    out += gameboard[i][j].getValue();
+                    out += " "+gameboard[i][j].getValue()+" ";
                 } else if (gameboard[i][j].getHidden().equals("matched")) {
-                    out += "*";
+                    out += " * ";
                 } else {
-                    out += "_";
+                    out += " _ ";
                 }
             }
         }
@@ -80,7 +80,6 @@ public class Board {
                 }
             }
         }
-
         return true;
     }
 
@@ -96,8 +95,7 @@ public class Board {
      * @param column the column value of Tile
      */
     public void showValue(int row, int column) {
-
-        /* your code here */
+        System.out.println(gameboard[row][column].getValue());
     }
 
     /**
@@ -119,9 +117,17 @@ public class Board {
      */
     public String checkForMatch(int row1, int col1, int row2, int col2) {
         String msg = "";
-
-        /* your code here */
-
+        if(gameboard[row1][col1].equals(gameboard[row2][col2])) {
+            msg = "matched";
+            gameboard[row1][col1].foundMatch();
+            gameboard[row2][col2].foundMatch();
+            showValue(row1, col1);
+            showValue(row2, col2);
+        } else {
+            msg = "not a match";
+            gameboard[row1][col1].hide();
+            gameboard[row2][col2].hide();
+        }
         return msg;
     }
 
@@ -129,16 +135,17 @@ public class Board {
      * Checks the provided values fall within the range of the gameboard's dimension
      * and that the tile has not been previously matched
      * 
-     * @param rpw the row value of Tile
+     * @param row the row value of Tile
      * @param col the column value of Tile
      * @return true if row and col fall on the board and the row,col tile is
      *         unmatched, false otherwise
      */
     public boolean validateSelection(int row, int col) {
 
-        /* your code here */
-
-        return true;
+        if(row<gameboard.length&&col<gameboard[0].length&&!gameboard[row][col].matched())
+            return true;
+        else
+            return false;
     }
 
 }
