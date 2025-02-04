@@ -1,3 +1,5 @@
+import gui.MainFrame;
+
 class Main {
     /*
      * Play the game of Concentration
