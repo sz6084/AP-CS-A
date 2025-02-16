@@ -1,4 +1,4 @@
-/*
+package concentrationGame.src.game;/*
  * The game that uses a n x m board of tiles or cards.
  *  
  * Player chooses two random tiles from the board. The chosen tiles
@@ -76,7 +76,7 @@ public class Game {
     }
 
     displayBoard();
-    System.out.println("Game Over!");
+    System.out.println("concentrationGame.src.game.Game Over!");
   }
 
   /**

@@ -1,4 +1,4 @@
-/*
+package concentrationGame.src.game;/*
  * A tile in the game of Concentration
  * 
  * Tiles are arranged on an n x m board, represented in a 2D array.
@@ -14,7 +14,7 @@
  */
 
 /*
- * A Tile class for a gameboard
+ * A concentrationGame.src.game.Tile class for a gameboard
  */
 public class Tile {
     private boolean isMatched;

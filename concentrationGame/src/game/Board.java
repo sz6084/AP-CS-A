@@ -1,3 +1,4 @@
+package game;
 /*
  * A game board of NxM board of tiles.
  * 
@@ -6,7 +7,7 @@
  */
 
 /*
- * A Board class for concentration
+ * A concentrationGame.src.game.Board class for concentration
  */
 
 import java.util.*;
@@ -92,8 +93,8 @@ public class Board {
      * row values must be in the range of 0 to gameboard.length,
      * column values must be in the range of 0 to gameboard[0].length
      * 
-     * @param row    the row value of Tile
-     * @param column the column value of Tile
+     * @param row    the row value of concentrationGame.src.game.Tile
+     * @param column the column value of concentrationGame.src.game.Tile
      */
     public void showValue(int row, int column) {
         gameboard[row][column].show();
@@ -110,10 +111,10 @@ public class Board {
      * row values must be in the range of 0 to gameboard.length,
      * column values must be in the range of 0 to gameboard[0].length
      * 
-     * @param row1 the row value of Tile 1
-     * @param col1 the column value of Tile 1
-     * @param row2 the row value of Tile 2
-     * @param col2 the column vlue of Tile 2
+     * @param row1 the row value of concentrationGame.src.game.Tile 1
+     * @param col1 the column value of concentrationGame.src.game.Tile 1
+     * @param row2 the row value of concentrationGame.src.game.Tile 2
+     * @param col2 the column vlue of concentrationGame.src.game.Tile 2
      * @return a message indicating whether or not a match occured
      */
     public String checkForMatch(int row1, int col1, int row2, int col2) {
@@ -136,8 +137,8 @@ public class Board {
      * Checks the provided values fall within the range of the gameboard's dimension
      * and that the tile has not been previously matched
      * 
-     * @param row the row value of Tile
-     * @param col the column value of Tile
+     * @param row the row value of concentrationGame.src.game.Tile
+     * @param col the column value of concentrationGame.src.game.Tile
      * @return true if row and col fall on the board and the row,col tile is
      *         unmatched, false otherwise
      */
