@@ -42,7 +42,6 @@ public class Board {
      * Returns a string representation of the board, getting the state of
      * each tile. If the tile is showing, displays its value,
      * otherwise displays it as hidden.
-     * 
      * Precondition: gameboard is populated with tiles
      * 
      * @return a string representation of the board
@@ -68,10 +67,9 @@ public class Board {
     /**
      * Determines if the board is full of tiles that have all been matched,
      * indicating the game is over.
-     * 
      * Precondition: gameboard is populated with tiles
      * 
-     * @return true if all tiles have been matched, false otherwse
+     * @return true if all tiles have been matched, false otherwise
      */
     public boolean allTilesMatch() {
 
@@ -87,7 +85,6 @@ public class Board {
 
     /**
      * Sets the tile to show its value (like a playing card face up)
-     * 
      * Preconditions:
      * gameboard is populated with tiles,
      * row values must be in the range of 0 to gameboard.length,
@@ -102,10 +99,8 @@ public class Board {
 
     /**
      * Checks if the Tiles in the two locations match.
-     * 
      * If Tiles match, show Tiles in matched state and return a "matched" message
      * If Tiles do not match, re-hide Tiles (turn face down).
-     * 
      * Preconditions:
      * gameboard is populated with Tiles,
      * row values must be in the range of 0 to gameboard.length,
@@ -114,8 +109,8 @@ public class Board {
      * @param row1 the row value of concentrationGame.src.game.Tile 1
      * @param col1 the column value of concentrationGame.src.game.Tile 1
      * @param row2 the row value of concentrationGame.src.game.Tile 2
-     * @param col2 the column vlue of concentrationGame.src.game.Tile 2
-     * @return a message indicating whether or not a match occured
+     * @param col2 the column value of concentrationGame.src.game.Tile 2
+     * @return a message indicating whether a match occurred
      */
     public String checkForMatch(int row1, int col1, int row2, int col2) {
         String msg = "";

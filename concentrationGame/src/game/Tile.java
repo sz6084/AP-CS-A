@@ -1,4 +1,4 @@
-package concentrationGame.src.game;/*
+package game;/*
  * A tile in the game of Concentration
  * 
  * Tiles are arranged on an n x m board, represented in a 2D array.
