@@ -32,8 +32,10 @@ public class Tile {
      * 
      * @param value the string value of the tile (face up value)
      */
-    public Tile(String value) {
+    public Tile(String value, int y, int x) {
         this.value = value; // face up value
+        this.y = y;
+        this.x = x;
 
         isMatched = false;
         isShowing = false;
@@ -95,7 +97,7 @@ public class Tile {
      */
     public void foundMatch() {
         isMatched = true;
-        value = matched;
+        //value = matched;
         hidden = matched;
     }
 
