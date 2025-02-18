@@ -23,6 +23,8 @@ public class Tile {
     private String value;
     private String hidden;
     private String matched;
+    private int y;
+    private int x;
 
     /**
      * Construct a tile with a string value. The default state
@@ -37,6 +39,9 @@ public class Tile {
         isShowing = false;
         hidden = "_____"; // face down value
         matched = "  *  "; // a tile that is no longer in play
+    }
+    public String getFrame(int frame) {
+        return "images/animations/" + value + "/" + (frame + 1) + ".png";
     }
 
     /**
@@ -69,6 +74,10 @@ public class Tile {
      */
     public void hide() {
         isShowing = false;
+    }
+
+    public void flip() {
+        isShowing = !isShowing;
     }
 
     /**
@@ -116,5 +125,13 @@ public class Tile {
      */
     public String toString() {
         return value;
+    }
+
+    public int getY() {
+        return y;
+    }
+
+    public int getX() {
+        return x;
     }
 }

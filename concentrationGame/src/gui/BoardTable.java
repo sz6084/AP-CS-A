@@ -45,7 +45,7 @@ public class BoardTable extends JPanel {
     }
 
     private void onClick(Tile tile) {
-        if (tile.isVisible()) return;
+        if (tile.isShowingValue()) return;
 
         Tile[] visibleTiles = this.board.getVisibleTiles();
         TileLabel tileLabel = this.tileLabels[tile.getY()][tile.getX()];
@@ -62,10 +62,10 @@ public class BoardTable extends JPanel {
                     TileLabel otherTileLabel = this.tileLabels[otherTile.getY()][otherTile.getX()];
 
                     if (tile.equals(otherTile)) {
-                        tile.setMatched(true);
-                        otherTile.setMatched(true);
+                        tile.foundMatch();
+                        otherTile.foundMatch();
 
-                        if (this.board.checkWin()) {
+                        if (this.board.allTilesMatch()) {
                             Thread.sleep(2000);
                             this.main.sidebar.onWin();
                         }

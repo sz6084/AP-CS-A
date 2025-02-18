@@ -7,7 +7,7 @@ package game;
  */
 
 /*
- * A concentrationGame.src.game.Board class for concentration
+ * A Board class for concentration
  */
 
 import java.util.*;
@@ -20,17 +20,22 @@ public class Board {
             "fox", "fox",
             "monkey", "monkey",
             "turtle", "turtle" };
-    private Tile[][] gameboard = new Tile[3][4]; // size of board
+    private Tile[][] gameboard;
+    private int width;
+    private int height;
 
     /**
      * Constructor for the game. Creates the 2D gameboard
      * by populating it with card values
      * 
      */
-    public Board() {
+    public Board(int width, int height) {
+        this.width = width;
+        this.height = height;
+        gameboard = new Tile[width][height];
         List<String> validValues = new ArrayList<String>(Arrays.asList(tileValues));
-        for (int i = 0; i < gameboard.length; i++) {
-            for (int j = 0; j < gameboard[0].length; j++) {
+        for (int i = 0; i < width; i++) {
+            for (int j = 0; j < height; j++) {
                 int randIndex = (int) (Math.random() * validValues.size());
                 gameboard[i][j] = new Tile(validValues.remove(randIndex));
             }
@@ -145,4 +150,28 @@ public class Board {
             return false;
     }
 
+    public int getHeight() {
+        return height;
+    }
+    public int getWidth() {
+        return width;
+    }
+
+    public Tile getTile(int y, int x) {
+        return gameboard[y][x];
+    }
+
+    public Tile[] getVisibleTiles() {
+        ArrayList<Tile> visibleList = new ArrayList<>();
+        for(Tile[] row: gameboard) {
+            for(Tile elem: row) {
+                if (elem.isShowingValue()) {
+                    visibleList.add(elem);
+                }
+            }
+        }
+        Tile[] visibleArray = new Tile[visibleList.size()];
+        visibleList.toArray(visibleArray);
+        return visibleArray;
+    }
 }
