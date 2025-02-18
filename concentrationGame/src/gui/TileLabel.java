@@ -61,13 +61,7 @@ public class TileLabel extends JLabel {
         this.setIcon(icon);
     }
 
-    public void flipSound() {
-        String filename = "sounds/card_flip_" + ((int)(Math.random() * 4) + 1) + ".wav";
-        Utils.playSound(filename);
-    }
-
     public void flip() {
-        this.flipSound();
         Thread animationThread = new Thread(() -> {
             this.animationRunning = true;
             this.loadFrames();

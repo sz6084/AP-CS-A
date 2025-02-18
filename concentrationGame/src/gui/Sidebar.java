@@ -88,7 +88,6 @@ public class Sidebar extends JPanel {
         this.bestTime = this.bestTime == 0 ? this.timeElapsed : Math.min(this.bestTime, this.timeElapsed);
         this.updateTimeDisplay();
         this.timer.stop();
-        Utils.playSound("sounds/win.wav");
 
         int userChoice = JOptionPane.showConfirmDialog(null, dialogMessage);
         if (userChoice == 0) {

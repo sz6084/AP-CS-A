@@ -77,7 +77,7 @@ public class Board {
 
         for (int i = 0; i < gameboard.length; i++) {
             for (int j = 0; j < gameboard[0].length; j++) {
-                if (!gameboard[i][j].getValue().equals("matched")) {
+                if (!gameboard[i][j].matched()) {
                     return false;
                 }
             }
@@ -163,7 +163,7 @@ public class Board {
         ArrayList<Tile> visibleList = new ArrayList<>();
         for (Tile[] row : gameboard) {
             for (Tile elem : row) {
-                if (elem.isShowingValue()) {
+                if (elem.isShowingValue()&&!elem.matched()) {
                     visibleList.add(elem);
                 }
             }
@@ -172,4 +172,5 @@ public class Board {
         visibleList.toArray(visibleArray);
         return visibleArray;
     }
+
 }
